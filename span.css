@@ -1,0 +1,110 @@
+.cr-bgimg div span{
+	width:100%;
+	height: 100%;
+	position: absolute;
+	left:-150px;
+	-webkit-transition: left 1s ease-out 0s;
+	   -moz-transition: left 1s ease-out 0s;
+		 -o-transition: left 1s ease-out 0s;
+			transition: left 1s ease-out 0s;
+	top:0;
+	z-index:2;
+	text-indent:-99999px;
+			will-change:transition;
+}
+/*.cr-container input.cr-selector-img-1:checked ~ .cr-bgimg,*/
+.cr-bgimg div span:nth-child(1){
+	background:url(./images/1.jpg);
+}
+/*.cr-container input.cr-selector-img-2:checked ~ .cr-bgimg,*/
+.cr-bgimg div span:nth-child(2){
+	background:url(./images/2.jpg);
+}
+/*.cr-container input.cr-selector-img-3:checked ~ .cr-bgimg,*/
+.cr-bgimg div span:nth-child(3){
+	background:url(./images/3.jpg);
+}
+/*.cr-container input.cr-selector-img-4:checked ~ .cr-bgimg,*/
+.cr-bgimg div span:nth-child(4){
+	background:url(./images/4.jpg);
+}
+.cr-bgimg div:nth-child(1) span{
+	background-position:0px 0px; 
+}
+.cr-bgimg div:nth-child(2) span{
+	background-position:-150px 0px; 
+}
+.cr-bgimg div:nth-child(3) span{
+	background-position:-300px 0px; 
+	
+}
+.cr-bgimg div:nth-child(4) span{
+	background-position:-450px 0px; 
+}
+/*选中后的span添加动画*/
+.cr-container input:checked ~ .cr-bgimg span{
+	-webkit-animation: slide 1s ease-out;
+	-moz-animation: slide 1s ease-out;
+	-o-animation: slide 1s ease-out;
+	animation: slide 1s ease-out;
+	will-change:animation;
+}
+@-o-keyframes slide{
+	from{left:0;}
+	to{left:150px;}
+}
+@-moz-keyframes slide{
+	from{left:0;}
+	to{left:150px;}
+}
+@-webkit-keyframes slide{
+	from{left:0;}
+	to{left:150px;}
+}
+@keyframes slide{
+	from{left:0;}
+	to{left:150px;}
+}
+
+.cr-container input.cr-selector-img-1:checked ~ .cr-bgimg div span:nth-child(1),
+.cr-container input.cr-selector-img-2:checked ~ .cr-bgimg div span:nth-child(2),
+.cr-container input.cr-selector-img-3:checked ~ .cr-bgimg div span:nth-child(3),
+.cr-container input.cr-selector-img-4:checked ~ .cr-bgimg div span:nth-child(4)
+{
+	z-index:10;
+	left:0;
+	-webkit-animation: none;
+	-moz-animation: none;
+	-o-animation: none;
+	animation: none;
+	/*和上面的动画冲突 因为上面的样式包含这个样式*/
+}
+.cr-titles h3{
+	position: absolute;
+	width:100%;
+	text-align: center;
+	color:#fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+	z-index:1000;
+	top:50%;
+	opacity: 0;
+	transition: opacity 1s ease-out;
+}
+.cr-titles h3 span:nth-child(1){
+	display: block;
+	font-size: 70px;
+	font-family: "BebasNeue";
+}
+.cr-titles h3 span:nth-child(2){
+	display: block;
+	font-size: 14px;
+	padding:10px;
+	background:rgba(104,171,194,0.9);
+	font-family: "BebasNeue";
+}
+.cr-container input.cr-selector-img-1:checked ~ .cr-titles h3:nth-child(1),
+.cr-container input.cr-selector-img-2:checked ~ .cr-titles h3:nth-child(2),
+.cr-container input.cr-selector-img-3:checked ~ .cr-titles h3:nth-child(3),
+.cr-container input.cr-selector-img-4:checked ~ .cr-titles h3:nth-child(4) {
+	opacity: 1;
+}
